@@ -33,20 +33,21 @@
     <main>
         <div class="container">
             <section id="class-schedule">
-                <div class="class-item">
-                    <div class="field">
+                <div class="field">
+                    <div class="main">
                         <label for="Class name">授業名</label><br />
-                    <input type="text" id="Class name" name="Class name"><br />
+                        <input type="text" id="Class name" name="Class name"><br />
 
-                    <label for="day of week">曜日</label><br />
-                    <input id="day of week" name="day of week"><br />
+                        <label for="day of week">曜日</label><br />
+                        <input id="day of week" name="day of week"><br />
+                        <label for="time">時間</label><br />
+                        <input type="text" id="time" name="time"><br />
 
-                    <label for="time">時間</label><br />
-                    <input type="text" id="time" name="time"><br />
-
-                    <label for="unit">単位数</label><br />
-                    <input type="text" id="unit" name="unit"><br />
-                    <TABLE BORDER="10">
+                        <label for="unit">単位数</label><br />
+                        <input type="text" id="unit" name="unit"><br />
+                    </div>
+                    <div class="timetable">
+                        <TABLE BORDER="10">
                         <TR> <TH>時間/曜日 </TH> <TH>月曜日</TH> <TH>火曜日</TH>　<TH>水曜日</TH> </TR>
                         <TR> <TD>1限</TD> <TD>数学A</TD> <TD>　</TD> <TD>　</TD> </TR>
                         <TR> <TD>2限</TD> <TD>　</TD> <TD>ゼミ</TD> <TD>　</TD> </TR>
@@ -54,9 +55,9 @@
                         <TR> <TD>4限</TD> <TD>経済原論</TD> <TD>　</TD> <TD>歴史学</TD> </TR>
                         <TR> <TD>5限</TD> <TD>　</TD> <TD>　</TD> <TD>英語</TD></TR>
                         <CAPTION>あなたの時間割</CAPTION> 
-                        </TABLE>
-                      </div>
-                </div>
+                        </TABLE>    
+                    </div>            
+                </div>              
                 <div class="wrap">
                     <button class="button" onclick="location.href='class.html'">登録する</button>
                 </div>
