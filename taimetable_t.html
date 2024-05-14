@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間割管理メイン</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            max-width: 900px;
+            margin: auto;
+        }
+        .container {
+            border: 1px solid black;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color:white; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a>
+            <!-- Add links for other pages -->
+            <a href="#">画面1</a>
+            <a href="#">画面2</a>
+            <a href="#">画面3</a>
+            <a href="#">画面4</a></li> 
+        </ul>
+    </nav>
+
+    <section id="class-schedule">
+        <!-- Add form or other elements to display class schedule -->
+        
+        <!-- Example of displaying a class -->
+        <div class="class-item">
+            <p>     今日の時間割</p>
+            <p>1限 :</p>
+            <p>2限 :</p>
+            <p>3限 :</p>
+            <p>4限 :</p>
+            <p>5限 :</p>
+            <p>6限 :</p> 
+            <!-- Add button or link to display map -->
+            <button>地図を表示</button> 
+        </div>
+
+         <!-- Repeat for other classes -->
+
+         <!-- Settings button -->
+         <button id="settings">設定</button>
+
+     </section>
+
+     <!-- Other sections can be added as needed -->
+
+</div>
+
+<script type="text/javascript">
+   // Add JavaScript code here if needed
+   document.getElementById('settings').addEventListener('click', function() {
+       window.location.href = 'settings.html'; // Replace with actual link
+   });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間割管理システム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: auto;
+        }
+        form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        input[type=text], textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color:white; 
+        }
+        
+    </style>
+</head>
+<body>
+
+<h1>TODO登録</h1>
+
+<form action="/submit" method="post">
+    <label for="title">タイトル</label><br/>
+    <input type="text" id="title" name="title"><br/>
+
+    <label for="description">詳細</label><br/>
+    <textarea id="description" name="description"></textarea><br/>
+
+    <label for="date">期限</label><br/>
+    <input type="text" id ="date" name ="date"><br/>
+
+     <label for ="status">進捗状況</label><br/>
+     <input type ="text"id = "status"name = "status"><br/>
+
+     <!-- Add more fields as needed -->
+
+     <!-- Submit and Cancel buttons -->
+     <button type = "submit"> キャンセル </button >
+       
+       
+        
+        
+        
+        
+
+<button type = "submit"> 登録する </button >
+    
+ </form >
+
+ </body >
+ </html >
+
