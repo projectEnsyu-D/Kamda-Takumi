@@ -4,13 +4,6 @@
     padding: 20px;
     font-size: 40px;
 }
-.container label {
-    font-size: 40px;
-}
-
-.container input {
-    font-size: 40px;
-}
 .field {
     display: flex;
     justify-content: space-around;
@@ -52,4 +45,19 @@ html, body {
     color: #fff;
     transform: translateY(-7px);
   }
+  /*ここからは時間割のマス目*/
+  table {
+    border-collapse: collapse;
+    width: 50%;
+}
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+  
   

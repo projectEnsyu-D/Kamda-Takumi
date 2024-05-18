@@ -35,35 +35,87 @@
             <section id="class-schedule">
                 <div class="field">
                     <div class="main">
-                        <label for="Class name">授業名</label><br />
-                        <input type="text" id="Class name" name="Class name"><br />
+                        <label for="class-name">授業名</label><br />
+                        <input type="text" id="class-name" name="class-name"><br />
 
-                        <label for="day of week">曜日</label><br />
-                        <input id="day of week" name="day of week"><br />
+                        <label for="day-of-week">曜日</label><br />
+                        <input type="text" id="day-of-week" name="day-of-week"><br />
+
                         <label for="time">時間</label><br />
                         <input type="text" id="time" name="time"><br />
 
                         <label for="unit">単位数</label><br />
                         <input type="text" id="unit" name="unit"><br />
                     </div>
-                    <div class="timetable">
-                        <TABLE BORDER="10">
-                        <TR> <TH>時間/曜日 </TH> <TH>月曜日</TH> <TH>火曜日</TH>　<TH>水曜日</TH> </TR>
-                        <TR> <TD>1限</TD> <TD>数学A</TD> <TD>　</TD> <TD>　</TD> </TR>
-                        <TR> <TD>2限</TD> <TD>　</TD> <TD>ゼミ</TD> <TD>　</TD> </TR>
-                        <TR> <TD>3限</TD> <TD>数学B</TD> <TD>ゼミ</TD> <TD>法学</TD> </TR>
-                        <TR> <TD>4限</TD> <TD>経済原論</TD> <TD>　</TD> <TD>歴史学</TD> </TR>
-                        <TR> <TD>5限</TD> <TD>　</TD> <TD>　</TD> <TD>英語</TD></TR>
-                        <CAPTION>あなたの時間割</CAPTION> 
-                        </TABLE>    
-                    </div>            
-                </div>              
+                    <table align="center">
+                        <thead>
+                            <tr>
+                                <th width="10%"></th>
+                                <th width="18%">月</th>
+                                <th width="18%">火</th>
+                                <th width="18%">水</th>
+                                <th width="18%">木</th>
+                                <th width="18%">金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th align="center">1</th>
+                                <td id="a1" onclick="clicked('a1')"></td>
+                                <td id="b1" onclick="clicked('b1')"></td>
+                                <td id="c1" onclick="clicked('c1')"></td>
+                                <td id="d1" onclick="clicked('d1')"></td>
+                                <td id="e1" onclick="clicked('e1')"></td>
+                            </tr>
+                            <tr>
+                                <th align="center">2</th>
+                                <td id="a2" onclick="clicked('a2')"></td>
+                                <td id="b2" onclick="clicked('b2')"></td>
+                                <td id="c2" onclick="clicked('c2')"></td>
+                                <td id="d2" onclick="clicked('d2')"></td>
+                                <td id="e2" onclick="clicked('e2')"></td>
+                            </tr>
+                            <tr>
+                                <th align="center">3</th>
+                                <td id="a3" onclick="clicked('a3')"></td>
+                                <td id="b3" onclick="clicked('b3')"></td>
+                                <td id="c3" onclick="clicked('c3')"></td>
+                                <td id="d3" onclick="clicked('d3')"></td>
+                                <td id="e3" onclick="clicked('e3')"></td>
+                            </tr>
+                            <tr>
+                                <th align="center">4</th>
+                                <td id="a4" onclick="clicked('a4')"></td>
+                                <td id="b4" onclick="clicked('b4')"></td>
+                                <td id="c4" onclick="clicked('c4')"></td>
+                                <td id="d4" onclick="clicked('d4')"></td>
+                                <td id="e4" onclick="clicked('e4')"></td>
+                            </tr>
+                            <tr>
+                                <th align="center">5</th>
+                                <td id="a5" onclick="clicked('a5')"></td>
+                                <td id="b5" onclick="clicked('b5')"></td>
+                                <td id="c5" onclick="clicked('c5')"></td>
+                                <td id="d5" onclick="clicked('d5')"></td>
+                                <td id="e5" onclick="clicked('e5')"></td>
+                            </tr>
+                            <tr>
+                                <th align="center">6</th>
+                                <td id="a6" onclick="clicked('a6')"></td>
+                                <td id="b6" onclick="clicked('b6')"></td>
+                                <td id="c6" onclick="clicked('c6')"></td>
+                                <td id="d6" onclick="clicked('d6')"></td>
+                                <td id="e6" onclick="clicked('e6')"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <input id="subject">
                 <div class="wrap">
                     <button class="button" onclick="location.href='class.html'">登録する</button>
+                    <button class="button" id="restore" onclick="shutokud();restoreTable(data)">LOAD</button>
                 </div>
             </section>
-        </div>
-        </section>
         </div>
     </main>
     <footer class="footer">
@@ -83,3 +135,4 @@
 </body>
 
 </html>
+
