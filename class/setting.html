@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D-Cam</title>
+    <link href="./css/common-css/common.css" rel="stylesheet" />
+    <link href="./css/class-css/class.css" rel="stylesheet" />
+    <script src="./js/class-js/class.js"></script>
+    <script src="./js/common-js/toggle-menu.js"></script>
 </head>
-<script src="/js/js/class-js/class.js"></script>
-<script src="/js/common-js/toggle-menu.js"></script>
-<link href="./css/common-css/common.css" rel="stylesheet" />
-<link href="./css/class-css/class.css" rel="stylesheet" />
 
 <body>
     <header class="header">
@@ -37,15 +37,28 @@
                     <div class="main">
                         <label for="class-name">授業名</label><br />
                         <input type="text" id="class-name" name="class-name"><br />
-
                         <label for="day-of-week">曜日</label><br />
-                        <input type="text" id="day-of-week" name="day-of-week"><br />
-
+                        <select id="day-of-week" name="day-of-week">
+                            <option value="月">月</option>
+                            <option value="火">火</option>
+                            <option value="水">水</option>
+                            <option value="木">木</option>
+                            <option value="金">金</option>
+                        </select><br />
                         <label for="time">時間</label><br />
-                        <input type="text" id="time" name="time"><br />
-
+                        <select id="time" name="time">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select><br />
                         <label for="unit">単位数</label><br />
                         <input type="text" id="unit" name="unit"><br />
+                        <label for="room">教室</label><br />
+                        <input type="text" id="room" name="room"><br />
+                        <button class="roo" onclick="saveClass()">保存する</button>
                     </div>
                     <table align="center">
                         <thead>
@@ -110,10 +123,9 @@
                         </tbody>
                     </table>
                 </div>
-                <input id="subject">
                 <div class="wrap">
                     <button class="button" onclick="location.href='class.html'">登録する</button>
-                    <button class="button" id="restore" onclick="shutokud();restoreTable(data)">LOAD</button>
+                    <button class="button" id="restore" onclick="shutoku()">LOAD</button>
                 </div>
             </section>
         </div>
@@ -135,4 +147,6 @@
 </body>
 
 </html>
+
+
 

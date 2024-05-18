@@ -1,46 +1,70 @@
-/*ここからはローカルストレージ*/
-let data = {}
-let dayOfWeek
-//window.onload = shutoku;
+let data = {};
+
 window.onload = function() {
-    data - new Date()
-    dayOfWeek = date.getDay()
-}
+    shutoku();
+};
 
 function shutoku() {
-    let lokal = localStorage.getItem("table_data")
-    data = JSON.parse(lokal)
-    console.log(lokal)
+    let lokal = localStorage.getItem("table_data");
+    if (lokal) {
+        data = JSON.parse(lokal);
+        console.log(lokal);
+        restoreTable(data);
+    }
+}
+
+function saveClass() {
+    let className = document.getElementById("class-name").value;
+    let dayOfWeek = document.getElementById("day-of-week").value;
+    let time = document.getElementById("time").value;
+    let unit = document.getElementById("unit").value;
+    let room = document.getElementById("room").value;
+
+    let cellId = getCellId(dayOfWeek, time);
+    let cell = document.getElementById(cellId);
+    if (cell) {
+        cell.innerHTML = `${className} (${room})`;
+        // データをlocalStorageに保存する
+        let cellData = { className: className, dayOfWeek: dayOfWeek, time: time, unit: unit, room: room };
+        data[cellId] = cellData; // オブジェクト形式で保存
+
+        localStorage.setItem("table_data", JSON.stringify(data));
+    }
+}
+
+
+function getCellId(dayOfWeek, time) {
+    let days = { "月": "a", "火": "b", "水": "c", "木": "d", "金": "e" };
+    if (days[dayOfWeek] && time >= 1 && time <= 6) {
+        return days[dayOfWeek] + time;
+    }
+    return null;
 }
 
 function clicked(id) {
-    let cell = document.getElementById(id)
-    let inputCell = document.getElementById("subject")
-    console.log(inputCell.value)
-    data[id] = inputCell.value
-    cell.innerHTML = inputCell.value
-    let table = data[id]
-    localstorage.setItem("table_data",JSON.stringify(data))
-    console.log(data)
+    let cell = document.getElementById(id);
+    let dayOfWeek = getDayOfWeekFromCellId(id[0]);
+    let time = id[1];
+
+    document.getElementById("day-of-week").value = dayOfWeek;
+    document.getElementById("time").value = time;
 }
-function finished() {
-    let inputCell = document/getElementbyId("subject")
-    inputCell.style.visibility = "hidden"
+
+function getDayOfWeekFromCellId(cellId) {
+    let days = { "a": "月", "b": "火", "c": "水", "d": "木", "e": "金" };
+    return days[cellId];
 }
 
 function restoreTable(data) {
-    //console.log(data)
-    for (let k in data){
-        let cell = documet.getElementbyId(k)
-        let col = k[0]
-        let colLeft = {"a" : "e" , "b" : "a" , "c" : "b" , "d" : "c" , "e" : "d"}[col]
-        cell.innerHTML = data[k]
-        for (var i = 1;i<7; i++){
-            var cellLeft = colLeft + String(i)
-            if (data[cellLeft] == data[k]) {
-                cell.innerHTML = "()" + data[k]//これが前日と同じ
-            }
+    for (let k in data) {
+        let cell = document.getElementById(k);
+        if (cell) {
+            cell.innerHTML = data[k];
         }
-        console.log(col, colLeft, cellLeft)
     }
 }
+
+
+
+
+

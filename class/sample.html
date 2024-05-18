@@ -27,6 +27,7 @@
         }
         
     </style>
+    <script src="./js/class-js/c.js"></script>
 </head>
 <body>
 
@@ -40,26 +41,47 @@
     <textarea id="description" name="description"></textarea><br/>
 
     <label for="date">期限</label><br/>
-    <input type="text" id ="date" name ="date"><br/>
+    <input type="text" id="date" name="date"><br/>
 
-     <label for ="status">進捗状況</label><br/>
-     <input type ="text"id = "status"name = "status"><br/>
+    <label for="status">進捗状況</label><br/>
+    <input type="text" id="status" name="status"><br/>
 
-     <!-- Add more fields as needed -->
+    <!-- Add more fields as needed -->
 
-     <!-- Submit and Cancel buttons -->
-     <button type = "submit"> キャンセル </button >
-       
-       
-        
-        
-        
-        
+    <!-- Submit and Cancel buttons -->
+    <button type="submit">キャンセル</button>
+    <button type="submit">登録する</button>
+</form>
 
-<button type = "submit"> 登録する </button >
-    
- </form >
+<main>
+    <form action="#" id="form">
+        <input type="text" name="content">
+        <input type="submit" onclick="DisplayDate()" value="送信">
+    </form>
+    <p id="output"></p>
+</main>
 
- </body >
- </html >
+</body>
+</html>
 
+<label for="room">教室</label><br />
+                        <select id="room" name="room">
+                            <option value="1">１号館</option>
+                            <option value="1d">１号館別館</option>
+                            <option value="2">２号館</option>
+                            <option value="3">３号館</option>
+                            <option value="3d">３号館別館</option>
+                            <option value="4">４号館</option>
+                            <option value="4d">４号館別館</option>
+                            <option value="5">５号館</option>
+                            <option value="6">６号館</option>
+                            <option value="7">７号館</option>
+                            <option value="8">８号館</option>
+                            <option value="9">９号館</option>
+                            <option value="10">10号館</option>
+                            <option value="10d">10号館・旧一号館</option>
+                            <option value="11">11号館</option>
+                            <option value="12">12号館</option>
+                            <option value="13">13号館</option>
+                            <option value="14">14号館</option>
+                        </select><br />
