@@ -74,7 +74,11 @@ select {
   padding: 20px; /* 内側の余白設定 */
   box-sizing: border-box; /* ボーダーとパディングを含めたサイズに設定 */
 }
+/*ここからはセル*/
+th, td {
+  font-size: 19px;
+  padding: 8px; /* セルの内側の余白 */
+  border: 1px solid #ddd; /* セルの境界線 */
+  text-align: center; /* テキストの中央揃え */
+}
 
-
-  
-  

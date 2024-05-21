@@ -56,9 +56,10 @@
                         </select><br />
                         <label for="unit">単位数</label><br />
                         <input type="text" id="unit" name="unit"><br />
-                        <label for="room">教室</label><br />
+                        <label for="room" placeholder="例）1号館101">教室</label><br />
                         <input type="text" id="room" name="room"><br />
-                        <button class="roo" onclick="saveClass()">保存する</button>
+                        <button class="button" onclick="saveClass()">保存する</button>
+
                     </div>
                     <table align="center">
                         <thead>
@@ -125,7 +126,7 @@
                 </div>
                 <div class="wrap">
                     <button class="button" onclick="location.href='class.html'">登録する</button>
-                    <button class="button" id="restore" onclick="shutoku()">LOAD</button>
+                    <button class="button" id="restore" onclick="shutoku()">再読み込み</button>
                 </div>
             </section>
         </div>
