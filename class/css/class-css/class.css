@@ -70,8 +70,8 @@ input[type="text"] {
 select {
   width: 150%;  /* 幅設定 */
   height: 40px; /* 高さ設定 */
-  font-size: 40px; /* フォントサイズ設定 */
-  padding: 20px; /* 内側の余白設定 */
+  font-size: 16px; /* フォントサイズ設定 */
+  padding: 8px; /* 内側の余白設定 */
 }
 
 /*ここからはセル*/
@@ -80,5 +80,10 @@ th, td {
   padding: 8px; /* セルの内側の余白 */
   border: 1px solid #ddd; /* セルの境界線 */
   text-align: center; /* テキストの中央揃え */
+}
+/*ここからはMAP*/
+.highlighted {
+  fill: yellow; /* エリアの塗りつぶし色を指定 */
+  opacity: 0.5; /* エリアの透明度を指定 */
 }
 

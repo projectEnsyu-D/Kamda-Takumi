@@ -54,12 +54,30 @@
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select><br />
-                        <label for="unit">単位数</label><br />
-                        <input type="text" id="unit" name="unit"><br />
-                        <label for="room" placeholder="例）1号館101">教室</label><br />
+                        <label for="building">何号館</label><br />
+                        <select id="building" name="building">
+                            <option value="1">１号館</option>
+                            <option value="1d">１号館別館</option>
+                            <option value="2">２号館</option>
+                            <option value="3">３号館</option>
+                            <option value="3d">３号館別館</option>
+                            <option value="4">４号館</option>
+                            <option value="4d">４号館別館</option>
+                            <option value="5">５号館</option>
+                            <option value="6">６号館</option>
+                            <option value="7">７号館</option>
+                            <option value="8">８号館</option>
+                            <option value="9">９号館</option>
+                            <option value="10">10号館</option>
+                            <option value="10d">10号館・旧一号館</option>
+                            <option value="11">11号館</option>
+                            <option value="12">12号館</option>
+                            <option value="13">13号館</option>
+                            <option value="14">14号館</option>
+                        </select><br />
+                        <label for="room">教室</label><br />
                         <input type="text" id="room" name="room"><br />
                         <button class="button" onclick="saveClass()">保存する</button>
-
                     </div>
                     <table align="center">
                         <thead>
@@ -148,6 +166,7 @@
 </body>
 
 </html>
+
 
 
 
