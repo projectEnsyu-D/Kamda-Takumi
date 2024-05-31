@@ -2,7 +2,6 @@
 let data = {};
 
 window.onload = function () {
-    WeekDay();
     shutoku();
     displayNextClass();
   };
@@ -69,26 +68,6 @@ function displaySavedData(data) {
     }
 }
 
-function WeekDay() {
-    var today = new Date();
-    var weekday = ["日", "月", "火", "水", "木", "金", "土"];
-    var days = { "日": "a", "月": "a", "火": "b", "水": "c", "木": "d", "金": "e", "土": "a" };
-    var day = weekday[today.getDay()];
-    var prefix = days[day];
-    var wday = day + "曜日";
-
-    document.getElementById("weekday").innerText = "今日は " + wday;
-
-    for (var i = 1; i <= 6; i++) {
-        ["a", "b", "c", "d", "e"].forEach(function(d) {
-            var cell = document.getElementById(d + i);
-            if (cell) {
-                cell.style.display = d === prefix ? "" : "none";
-            }
-        });
-    }
-}
-
 /*ここからはMAP*/
 function displayNextClass() {
     let now = new Date();
@@ -111,26 +90,32 @@ function displayNextClass() {
     let currentPrefix = days[currentDayLabel];
 
     let nextSlotFound = false;
+    let nextDay = (currentDay + 1) % 7; // 次の曜日を計算（0から6の範囲に収めるために % 7 を使う）
+
     for (let i = 0; i < timeSlots.length; i++) {
         if (currentHour + currentMinute / 60 < timeSlots[i].end) {
             let cellId = currentPrefix + (i + 1);
             let cellData = data[cellId];
             if (cellData) {
-                document.getElementById("timeroom").innerText = `次の授業（${cellData.className}）は${cellData.building}号館${cellData.room}室です。`;
-            } else {
-                for (let j = i + 1; j < timeSlots.length; j++) {
-                    let nextCellId = currentPrefix + (j + 1);
-                    let nextCellData = data[nextCellId];
-                    if (nextCellData) {
-                        document.getElementById("timeroom").innerText = `次の授業（${nextCellData.className}）は${nextCellData.building}号館${nextCellData.room}室です。`;
-                        nextSlotFound = true;
-                        break;
-                    }
-                }
-            }
-            if (nextSlotFound) {
+                document.getElementById("timeroom").innerText = `今日の次の授業（${cellData.className}）は${cellData.building}号館${cellData.room}室です。`;
+                nextSlotFound = true;
                 break;
+            } else {
+                let nextCellId = days[weekday[nextDay]] + (i + 1);
+                let nextCellData = data[nextCellId];
+                if (nextCellData) {
+                    document.getElementById("timeroom").innerText = `明日の授業（${nextCellData.className}）は${nextCellData.building}号館${nextCellData.room}室です。`;
+                    nextSlotFound = true;
+                    break;
+                }
             }
         }
     }
+
+    if (!nextSlotFound) {
+        document.getElementById("timeroom").innerText = "次の授業が見つかりませんでした。";
+    }
 }
+
+
+
