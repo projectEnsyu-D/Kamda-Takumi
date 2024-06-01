@@ -98,6 +98,6 @@ th, td {
 /*ここからはMAP*/
 .highlighted {
   fill: yellow; /* エリアの塗りつぶし色を指定 */
-  opacity: 0.5; /* エリアの透明度を指定 */
+  opacity: 0.7; /* エリアの透明度を指定 */
 }
 
