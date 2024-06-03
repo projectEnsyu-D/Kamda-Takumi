@@ -18,6 +18,10 @@
   padding: 30px;
   font-size: 40px;
 }
+.container2 {
+  padding-bottom: 30px;
+  font-size: 40px;
+}
 .field {
     display: flex;
     justify-content: space-around;
@@ -29,8 +33,10 @@ html, body {
   }
   
   .wrap {
+    padding-top: 20px;
     height: 100%;
     display: flex;
+    justify-content: space-around;
     align-items: center;
     justify-content: center;
   }

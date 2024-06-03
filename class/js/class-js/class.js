@@ -14,6 +14,11 @@ let data = {};
       }
     }
 
+    function resetData() {
+        localStorage.clear();
+        location.reload(); // ページをリロードしてリセットを反映
+    }
+
     function saveClass() {
       let className = document.getElementById("class-name").value;
       let dayOfWeek = document.getElementById("day-of-week").value;
@@ -122,6 +127,7 @@ let data = {};
       
         if (!nextSlotFound) {
           document.getElementById("timeroom").innerText = "次の授業が見つかりませんでした。";
+          hideAllAreas();
         }
       }
       
@@ -142,3 +148,4 @@ let data = {};
           }
         }
       }
+      
