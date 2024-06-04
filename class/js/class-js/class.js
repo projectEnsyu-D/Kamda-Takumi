@@ -126,7 +126,7 @@ let data = {};
                 let cellData = data[cellId];
                 if (cellData) {
                     let buildingName = buildingNames[cellData.building] || `${cellData.building}号館`;
-                    document.getElementById("timeroom").innerText = `今日の次の授業（${cellData.className}）は${buildingName}${cellData.room}室です。`;
+                    document.getElementById("timeroom").innerText = `次の授業（${cellData.className}）は${buildingName}${cellData.room}室です。`;
                     showArea(cellData.building);
                     nextSlotFound = true;
                     break;
