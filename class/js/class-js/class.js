@@ -154,21 +154,30 @@ let data = {};
         }
     }
       
-      function showArea(building) {
-        for (let i = 1; i <= 18; i++) {
-          let area  = document.getElementById(`area${i}`);
-          if (area) {
-            area.style.display = (building && i == building) ? "block" : "none";
-          }
+    function showArea(building) {
+      for (let i = 1; i <= 18; i++) {
+        let area = document.getElementById(`area${i}`);
+        let text = document.getElementById(`text${i}`);
+        if (area) {
+          area.style.display = (building && i == building) ? "block" : "none";
+        }
+        if (text) {
+          text.style.display = (building && i == building) ? "block" : "none";
         }
       }
-      
-      function hideAllAreas() {
-        for (let i = 1; i <= 18; i++) {
-          let area = document.getElementById(`area${i}`);
-          if (area) {
-            area.style.display = "none";
-          }
+    }
+
+    function hideAllAreas() {
+      for (let i = 1; i <= 18; i++) {
+        let area = document.getElementById(`area${i}`);
+        let text = document.getElementById(`text${i}`);
+        if (area) {
+          area.style.display = "none";
+        }
+        
+        if (text) {
+          text.style.display = "none";
         }
       }
+    }
       
