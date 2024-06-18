@@ -1,25 +1,25 @@
 /*ローカルストレージ*/
 let data = {};
 
-    window.onload = function () {
+    window.onload = function () {//ページを読み込んだ時にこれを呼び出す
       loadData();
       displayNextClass();
     };
 
-    function loadData() {
-      let lokal = localStorage.getItem("table_data");
-      if (lokal) {
-        data = JSON.parse(lokal);
+    function loadData() {//ページを読み込む
+      let local = localStorage.getItem("table_data");
+      if (local) {
+        data = JSON.parse(local);
         displaySavedData(data);
       }
     }
 
-    function resetData() {
-        localStorage.clear();
-        location.reload(); // ページをリロードしてリセットを反映
+    function resetData() {// ページをリロードしてリセットを反映
+        localStorage.clear();    
+        location.reload();
     }
 
-    function saveClass() {
+    function saveClass() {//セル情報を記憶する
       let className = document.getElementById("class-name").value;
       let dayOfWeek = document.getElementById("day-of-week").value;
       let time = document.getElementById("time").value;
@@ -36,7 +36,7 @@ let data = {};
       }
     }
 
-    function getCellId(dayOfWeek, time) {
+    function getCellId(dayOfWeek, time) {//曜日と何限目かを取得する
       let days = { "月": "a", "火": "b", "水": "c", "木": "d", "金": "e" };
       if (days[dayOfWeek] && time >= 1 && time <= 6) {
         return days[dayOfWeek] + time;
@@ -44,7 +44,7 @@ let data = {};
       return null;
     }
 
-    function clicked(id) {
+    function clicked(id) {//クリックするとday-of-weekとtimeを取得する
       let cell = document.getElementById(id);
       let dayOfWeek = getDayOfWeekFromCellId(id[0]);
       let time = id[1];
@@ -53,12 +53,12 @@ let data = {};
       document.getElementById("time").value = time;
     }
 
-    function getDayOfWeekFromCellId(cellId) {
+    function getDayOfWeekFromCellId(cellId) {//曜日とa~eを対応させる
       let days = { "a": "月", "b": "火", "c": "水", "d": "木", "e": "金" };
       return days[cellId];
     }
 
-    function displaySavedData(data) {
+    function displaySavedData(data) {//入力したデータを表示する
       for (let cellId in data) {
         let cell = document.getElementById(cellId);
         if (cell) {
