@@ -17,13 +17,13 @@
 }
 
 .container {
-  padding: 30px;
-  font-size: 40px;
+  padding: 10px;
+  font-size: 30px;
 }
 
 .container2 {
-  padding-bottom: 30px;
-  font-size: 40px;
+  padding-bottom: 10px;
+  font-size: 30px;
 }
 
 .field {
@@ -127,11 +127,9 @@ td {
   fill: yellow; /* エリアの塗りつぶし色を指定 */
   opacity: 0.7; /* エリアの透明度を指定 */
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* 影の追加 */
-  transition: transform 0.3s ease-out; /* アニメーションの追加 */
 }
 
 .highlighted:hover {
-  transform: scale(1.2); /* ホバー時の拡大 */
   opacity: 0.9; /* ホバー時の透明度の変更 */
 }
 
